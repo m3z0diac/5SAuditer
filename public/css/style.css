@@ -1,0 +1,112 @@
+:root {
+    --dark-color: #19283f;
+    --green-color : rgb(16, 180, 167);
+    --red-color: #ff3150;
+    --orange-color: rgb(255, 94, 0);
+    --yellow-color: #ffc400;
+    --white-color: #fff;
+    --black-color: #000;
+    --verygreen-color: green;
+    --gray-color: gray;
+  }
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--dark-color);
+  }
+  .main-btn {
+    background-color: var(--green-color);
+    color: var(--black-color);
+  }
+  .main-title::after {
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+#icon-btn {
+    padding: 5px;
+    background: none;
+    border: none;
+}
+  /* Start Navbar */
+  .navbar {
+    background-color: var(--dark-color);
+  }
+  .navbar .navbar-nav .nav-link {
+    color: var(--white-color);
+  }
+  .navbar .navbar-nav .nav-link.active,
+  .navbar .navbar-nav .nav-link:focus,
+  .navbar .navbar-nav .nav-link:hover {
+    color: var(--green-color);
+  }
+  .navbar .search {
+    border-left: 1px solid var(--green-color);
+  }
+  .navbar .search svg {
+    color: var(--green-color);
+  }
+  .navbar .navbar-toggler {
+    color: var(--white-color);
+    font-size: 25px;
+    border-color: var(--white-color);
+  }
+  .navbar .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--green-color);
+  }
+
+.navbar-brand span:first-child {
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.navbar-brand span:last-child {
+    color: var(--green-color);
+}
+
+.landing {
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px);
+}
+
+.card {
+    overflow: hidden;
+    /* border: 1px solid var(--white-color); */
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-header, .modal-header {
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+
+.card-body, .modal-body, div.dataTables_wrapper div.dataTables_length select {
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+}
+
+select {
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+}
+
+div.dataTables_wrapper label,
+div.dataTables_wrapper div.dataTables_length select,
+div.dataTables_wrapper div.dataTables_info,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+div.dataTables_wrapper div.dataTables_filter input
+{
+    color: var(--white-color) !important;
+}
