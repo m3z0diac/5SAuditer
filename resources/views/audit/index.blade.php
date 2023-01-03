@@ -6,18 +6,27 @@
         <div class="landing mb-5">
             <div>
                 @if (session('message'))
-                    <div class="alert alert-success">
-                        {{ session('message') }}
-                        <script>
-                            const mytext = {{ session('message') }}
-                        </script>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Résultat</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9 col-sm-9 d-flex align-items-center">
+                                    <p style="font-weight: bold" class="ps-5">
+                                        {{ strstr(session('message'), "-", true ) }}
+                                        <?php
+                                            $flag = strstr(session('message'), "-", false );
+                                        ?>
+                                    </p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 p-3 ps-5">
+                                    <img style="max-width: 100px" src="{{ asset('images/flag'.$flag.'.png')  }}" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                @else
-                    <script>
-                        const mytext = "test"
-                    </script>
                 @endif
-
                 <h1 class="navbar-brand text-center" style="font-size: 5rem">
                     <span><i class="fa-solid fa-5 m-0"></i><i class="fa-solid fa-s m-0"></i></span><span>Audit</span>
                 </h1>
@@ -26,7 +35,7 @@
                         <h4>Liste des Audits</h4>
                     </div>
                     <div class="card-body" style="background-color: var(--dark-color)">
-                        <table id="example" class="table" style="width:100%;color: var(--white-color) !important">
+                        <table id="example" class="table" style="width:100%;color: var(--white-color) !important; overflow: auto">
                             <thead>
                                 <tr>
                                     <th>Date</th>
@@ -41,11 +50,11 @@
                             <tbody>
                                 @foreach ($audits as $audit)
                                     <tr style="color: var(--white-color) !important">
-                                        <td>{{ $audit->date_audit   }}	</td>
-                                        <td>{{ $audit->heure_debut 	}}	</td>
-                                        <td>{{ $audit->heure_fin 	}}	</td>
-                                        <td class="text-success">{{ $audit->nbr_yes 		}}	</td>
-                                        <td class="text-danger">{{ $audit->nbr_no 		}}	</td>
+                                        <td>{{ $audit->date_audit   }}  </td>
+                                        <td>{{ $audit->heure_debut  }}  </td>
+                                        <td>{{ $audit->heure_fin    }}  </td>
+                                        <td class="text-success">{{ $audit->nbr_yes         }}  </td>
+                                        <td class="text-danger">{{ $audit->nbr_no       }}  </td>
                                         <td>
                                         @foreach ($engins as $engin)
                                             @if ($engin->id_engin == $audit->id_engin)
