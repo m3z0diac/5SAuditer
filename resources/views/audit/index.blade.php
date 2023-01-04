@@ -14,7 +14,9 @@
                             <div class="row">
                                 <div class="col-lg-9 col-md-9 col-sm-9 d-flex align-items-center">
                                     <p style="font-weight: bold" class="ps-5">
-                                        {{ strstr(session('message'), "-", true ) }}
+                                        <span id='parag'>
+
+                                        </span>
                                         <?php
                                             $flag = strstr(session('message'), "-", false );
                                         ?>
@@ -82,5 +84,23 @@
             </div>
         </div>
     </div>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=LQbLAW4X"></script>
+    <script>
+        function typeText(element, text) {
+            let i = 0;
+            const interval = setInterval(() => {
+            element.textContent += text[i];
+            i++;
+            if (i >= text.length) {
+                clearInterval(interval);
+            }
+            }, 50);
+        }
+        function speakResult(text) {
+            responsiveVoice.speak(text, "French Female",{rate : 1});;
+        }
+        speakResult("<?php echo strstr(session('message'), "-", true ) ?>")
+        typeText(document.getElementById("parag"), "<?php echo strstr(session('message'), "-", true ) ?>")
+    </script>
 @endsection
 
