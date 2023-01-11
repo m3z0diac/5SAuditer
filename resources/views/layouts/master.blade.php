@@ -31,6 +31,8 @@
         @yield('content')
 
     </main>
+
+    @yield('javascript')
     <script src="{{ asset('js/all.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
@@ -39,10 +41,28 @@
     <script src="{{ asset('js/checklist.js') }}"></script>
     <script src="{{ asset('js/BootstrapDatatables.js') }}"></script>
     <script src="{{ asset('js/datatables.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
         } );
+        $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Voulez-vous vraiment supprimer cet enregistrement ?`,
+                text: "Si vous le supprimez, il disparaîtra pour toujours.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                }
+            });
+        });
     </script>
 </body>
 </html>

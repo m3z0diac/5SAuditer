@@ -10,7 +10,7 @@
                 <form action="{{ url('start') }}" method="POST">
                     @csrf
                     <input type="text" name="id_audit" value="{{ $audit->id_audit }}" hidden>
-                    <label class="label-control">Selectionner le Chambre</label>
+                    <label class="label-control">Selectionner Sous-Périmètres</label>
                     <select class="form-control rounded-pill text-white mb-3" style="padding: 0.5rem 1rem; background: none !important" id="selectChambre" name="id_chambre">
                         @foreach ($chambres as $chambre)
                             <option class="text-dark selectChambre" value="{{$chambre->id_chambre}}">{{ $chambre->nomchambre }}</option>

@@ -39,7 +39,7 @@ class AuditController extends Controller
             $audit = new Audit;
             $audit->id_auditeur = $request->id_auditeur;
             $audit->date_audit = date('Y-m-d');
-            $audit->heure_debut = date('H:i:s');
+            $audit->heure_debut = date('H:i');
         }
         $audit->id_engin = $request->id_engin;
         $audited_chambres = explode(',', $audit->audited_chs, -1);
@@ -58,7 +58,6 @@ class AuditController extends Controller
 
     public function storeAudit(Request $request)
     {
-
         $audit = Audit::find($request->id_audit);
         $chambre = Chambre::find($request->id_chambre);
         $engin = Engin::find($request->id_engin);
@@ -83,7 +82,7 @@ class AuditController extends Controller
     public function stoptAudit(Request $request)
     {
         $audit = Audit::find($request->id_audit);
-        $audit->heure_fin = date('H:i:s');
+        $audit->heure_fin = date('H:i');
 
         $auditeur   = Auditeur::find($audit->id_auditeur);
         $fullname   = $auditeur->prenom . ' ' . $auditeur->nom;
@@ -135,7 +134,7 @@ class AuditController extends Controller
                     $ended_at . ". Ainsi, le nombre de Réponses Oui est " . $total_yes . " et le nombre de Réponses Non est " . $total_no .
                     ". Totalement le Résultat de L'audit est " . $status . ". Merci pour votre Temps, Bon Travail.-" . $flag;
         ;
-        return redirect('audits')->with('message', $message);
+        return redirect('audits')->with('message', html_entity_decode($message, ENT_QUOTES));
     }
 
 }

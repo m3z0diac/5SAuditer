@@ -16,7 +16,7 @@
                                 <form action="{{ url('start-audit') }}" method="POST">
                                     @csrf
                                     <div class="row mb-3">
-                                        <label class="col-md-4 col-form-label text-md-end">Auditeur</label>
+                                        <label class="col-md-4 col-form-label text-md-end">Auditeur(s)</label>
                                         <div class="col-md-5 me-0">
                                             <select name="id_auditeur" class="form-control rounded-pill text-white mb-3" style="padding: 0.5rem 1rem; background: none !important">
                                                 @foreach ($auditeurs as $auditeur)
@@ -56,7 +56,7 @@
                                                 <form action="{{ url('add-auditeur') }}" method="POST" class="form-horizontal form-material">
                                                     @csrf
                                                     <div class="form-group mb-4">
-                                                        <label class="col-md-12 mb-1 p-1">Prenom</label>
+                                                        <label class="col-md-12 mb-1 p-1">Prénom</label>
                                                         <div class="col-md-12">
                                                             <input type="text" name="prenom" class="form-control rounded-pill text-white" style="padding: 0.5rem 1rem; background: none !important">
                                                         </div>

@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <form action="{{ url('analyser') }}" method="POST">
                                 @csrf
-                                <label class="col-md-12 mb-1 p-1">Engin Flottant</label>
+                                <label class="col-md-12 mb-1 p-1">Engin Flottant (Périmètre)</label>
                                 <select name="id_engin" class="form-control rounded-pill text-white">
                                     @foreach ($engins as $engin)
                                         <option value="{{ $engin->id_engin }}" {{isset($selectedEngin) && $engin->id_engin == $selectedEngin->id_engin ? 'selected':''}}> {{ $engin->nomengin }} </option>
@@ -37,7 +37,9 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/Chart.min.js') }}"></script>
-    {!! $chart1->renderJs() !!}
+    @section('javascript')
+        <script src="{{ asset('js/Chart.min.js') }}"></script>
+        {!! $chart1->renderJs() !!}
+    @endsection
 @endsection
 

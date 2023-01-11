@@ -20,13 +20,13 @@
                     <div class="col-lg-6 mb-3">
                         <div class="card">
                             <div class="card-header text-dark">
-                                Ajouter Engin Flottant
+                                Ajouter Engin Flottant (Périmètre)
                             </div>
                             <div class="card-body">
                                 <form action="{{ url('add-engin') }}" method="POST" class="form-horizontal form-material">
                                     @csrf
                                     <div class="form-group mb-4">
-                                        <label class="col-md-12 mb-1 p-1">Engin Flottant</label>
+                                        <label class="col-md-12 mb-1 p-1">Engin Flottant (Périmètre)</label>
                                         <div class="col-md-12">
                                             <input type="text" name="nomengin" class="form-control rounded-pill text-white" style="padding: 0.5rem 1rem; background: none !important">
                                         </div>
@@ -45,19 +45,19 @@
                     <div class="col-lg-6 mb-3">
                         <div class="card">
                             <div class="card-header text-dark">
-                                Ajouter Sous Périmètre
+                                Ajouter Sous-Périmètre
                             </div>
                             <div class="card-body">
                                 <form action="{{ url('add-chambre') }}" method="POST" class="form-horizontal form-material">
                                     @csrf
                                     <div class="form-group mb-4">
-                                        <label class="col-md-12 mb-1 p-1">Sous Périmètre</label>
+                                        <label class="col-md-12 mb-1 p-1">Sous-Périmètre</label>
                                         <div class="col-md-12">
                                             <input type="text" name="nomchambre" class="form-control rounded-pill text-white" style="padding: 0.5rem 1rem; background: none !important">
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
-                                        <label class="col-md-12 mb-1 p-1">Engin Flottant</label>
+                                        <label class="col-md-12 mb-1 p-1">Engin Flottant (Périmètre)</label>
                                         <select name="id_engin" class="form-control rounded-pill text-white">
                                             @foreach ($engins as $engin)
                                                 <option value="{{ $engin->id_engin }}"> {{ $engin->nomengin }} </option>
@@ -78,16 +78,16 @@
                 </div>
                 <div class="card">
                     <div class="card-header text-dark">
-                        Sous Périmètres des Engins Flottants
+                        Sous-Périmètres des Engins Flottants
                     </div>
                     <div class="card-body" style="background-color: var(--dark-color)">
                         <table id="example" class="table" style="width:100%;color: #fff !important">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th style="max-width: 100px">Engin Flottant</th>
+                                    <th style="max-width: 100px">Engin Flottant </th>
                                     <th style="max-width: 16px">#</th>
-                                    <th>Les Sous Périmètres</th>
+                                    <th>Les Sous-Périmètres</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,7 +119,12 @@
                                                                     <form action="{{ url('edit-engin/'.$engin->id_engin) }}" method="POST" class="form-horizontal form-material">
                                                                         @csrf
                                                                         @method('PUT')
-
+                                                                        <div class="form-group mb-4">
+                                                                            <label class="col-md-12 mb-1 p-1">Engin Flottant</label>
+                                                                            <div class="col-md-12">
+                                                                                <input type="text" name="nomengin" value="{{ $engin->nomengin }}" class="form-control rounded-pill text-white" style="padding: 0.5rem 1rem; background: none !important">
+                                                                            </div>
+                                                                        </div>
                                                                         <div class="form-group mb-4">
                                                                             <div class="col-sm-12">
                                                                                 <button name="submit" type="submit" class="btn rounded-pill main-btn">

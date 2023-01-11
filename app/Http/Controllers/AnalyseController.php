@@ -12,6 +12,11 @@ class AnalyseController extends Controller
 
     public function Analyse($id_engin)
     {
+        /*
+            This function for analysing the number of yes and no answers
+            and converting them to a charts
+        */
+
         $engins = Engin::all();
         $selectedEngin = Engin::find($id_engin);
         $chart_options1 = [
@@ -52,6 +57,9 @@ class AnalyseController extends Controller
 
     public function analyser(Request $request)
     {
+        /*
+            Filter the Ships or the objects that you want to analyse
+        */
         return $this->Analyse($request->id_engin);
     }
 }

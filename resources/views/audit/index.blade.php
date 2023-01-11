@@ -46,17 +46,17 @@
                                     <th>Oui</th>
                                     <th>Non</th>
                                     <th>Engin Flottant</th>
-                                    <th>Drapeau 5S</th>
+                                    <th>Flag 5S</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($audits as $audit)
                                     <tr style="color: var(--white-color) !important">
-                                        <td>{{ $audit->date_audit   }}  </td>
-                                        <td>{{ $audit->heure_debut  }}  </td>
-                                        <td>{{ $audit->heure_fin    }}  </td>
-                                        <td class="text-success">{{ $audit->nbr_yes         }}  </td>
-                                        <td class="text-danger">{{ $audit->nbr_no       }}  </td>
+                                        <td>{{ $audit->date_audit   }}	</td>
+                                        <td>{{ $audit->heure_debut 	}}	</td>
+                                        <td>{{ $audit->heure_fin 	}}	</td>
+                                        <td class="text-success">{{ $audit->nbr_yes 		}}	</td>
+                                        <td class="text-danger">{{ $audit->nbr_no 		}}	</td>
                                         <td>
                                         @foreach ($engins as $engin)
                                             @if ($engin->id_engin == $audit->id_engin)
@@ -84,7 +84,6 @@
             </div>
         </div>
     </div>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=LQbLAW4X"></script>
     <script>
         function typeText(element, text) {
             let i = 0;
@@ -96,11 +95,14 @@
             }
             }, 50);
         }
+        typeText(document.getElementById("parag"), "<?php echo strstr(session('message'), "-", true ) ?>")
+    </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=LQbLAW4X"></script>
+    <script>
         function speakResult(text) {
             responsiveVoice.speak(text, "French Female",{rate : 1});;
         }
         speakResult("<?php echo strstr(session('message'), "-", true ) ?>")
-        typeText(document.getElementById("parag"), "<?php echo strstr(session('message'), "-", true ) ?>")
     </script>
 @endsection
 

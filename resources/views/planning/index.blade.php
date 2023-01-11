@@ -17,7 +17,7 @@
                     <div class="col-lg-5 mb-3">
                         <div class="card">
                             <div class="card-header text-dark">
-                                Ajouter Planes des audits
+                                Ajouter Plan d'audit
                             </div>
                             <div class="card-body">
                                 <form action="{{ url('add-plan') }}" method="POST" class="form-horizontal form-material">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
-                                        <label class="col-md-12 mb-1 p-1">Auditeur</label>
+                                        <label class="col-md-12 mb-1 p-1">Auditeur(s)</label>
                                         <select name="id_auditeur" class="form-control rounded-pill text-white mb-3" style="padding: 0.5rem 1rem; background: none !important">
                                             @foreach ($auditeurs as $auditeur)
                                                 <option class="text-dark" value="{{$auditeur->id_auditeur}}">{{ $auditeur->prenom }} {{ $auditeur->nom }}</option>
@@ -68,14 +68,14 @@
                     <div class="col-lg-7 mb-3">
                         <div class="card">
                             <div class="card-header text-dark">
-                                Listes des Planes d'audits
+                                Listes des Plans d'audits
                             </div>
                             <div class="card-body" style="background-color: var(--dark-color)">
                                 <table id="example" class="table" style="width:100%;color: #fff !important">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Auditeur</th>
+                                            <th>Auditeur(s)</th>
                                             <th>Année</th>
                                             <th>Mois</th>
                                             <th>Nombre d'Audits</th>
@@ -114,7 +114,7 @@
                                                                 <div class="modal-dialog">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header text-dark">
-                                                                            <h5 class="modal-title" id="exampleModalLabel">Modifier Planes d'audits</h5>
+                                                                            <h5 class="modal-title" id="exampleModalLabel">Modifier Plans d'audit</h5>
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <form action="{{ url('edit-plan/'.$plan->id_plan) }}" method="POST" class="form-horizontal form-material">

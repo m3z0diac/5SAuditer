@@ -20,10 +20,13 @@
             <a class="nav-link p-2 p-lg-3 {{ Request::is('engins') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('engins') }}">Engins Flottants</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 {{ Request::is('planning') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('planning') }}">Planes des audits</a>
+            <a class="nav-link p-2 p-lg-3 {{ Request::is('planning') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('planning') }}">Plans d'audits</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2 p-lg-3 {{ Request::is('audits') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('audits') }}">Audits Réalisée</a>
+            <a class="nav-link p-2 p-lg-3 {{ Request::is('auditeurs') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('auditeurs') }}">Liste d'auditeurs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-2 p-lg-3 {{ Request::is('audits') ? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('audits') }}">Audits Réalisés</a>
           </li>
           <li class="nav-item">
             <a class="nav-link p-2 p-lg-3 {{ Request::is('analyses') || Request::is('analyser')? 'active':'' }} {{ Request::is('start-audit') || Request::is('start') || Request::is('store-audit') ? 'disabled':'' }}" href="{{ url('analyses') }}">Analyses</a>
