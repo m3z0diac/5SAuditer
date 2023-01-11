@@ -2,6 +2,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     <div class="container">
         <div class="landing mb-5">
             <div>

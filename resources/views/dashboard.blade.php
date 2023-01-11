@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     <div class="container">
         <div class="landing">
             <div class="text-light">
@@ -94,3 +95,4 @@
         </div>
     </div>
 @endsection
+
