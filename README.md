@@ -1,2 +1,2 @@
 # 5SAuditer
-Web applicatiom for making Audites of 5S methods more easier and analysable for Marines Performance teams
+web application that making Audits of 5S methods automated ans more easier and analyzable for Marines performance teams in Morocco
